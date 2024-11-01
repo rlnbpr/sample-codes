@@ -3,6 +3,9 @@ package ir.sadad.collections;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 
 class CompareTest {
@@ -40,5 +43,17 @@ class CompareTest {
         assert bigDecimal1 != bigDecimal2;
         assert !bigDecimal2.equals(bigDecimal1);
         assert bigDecimal2.compareTo(bigDecimal1) == 0;
+    }
+
+    @Test
+    void findMaxInt() {
+        List<Integer> ints = Arrays.asList(0,1,2);
+        assert Collections.max(ints) == 2;
+    }
+
+    @Test
+    void findMaxNumber() {
+        List<Number> nums = Arrays.asList(0,1,2,3.14);
+        assert Collections.max(nums) == 3.14; // compile-time error
     }
 }
